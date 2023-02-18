@@ -19,12 +19,21 @@ def g(weight, distance):
 
 
     a = str((6.6743 * math.pow(10, -11) * 5.97600 * math.pow(10, 24) * float(weight)) / math.pow(float(distance), 2))          #подсчёт формулы
-
+    print(a)
+    v=0
     for i in range(len((a))):                                    #приведение записи к виду x + 10^N (высчитывание степени  10-ти и округление)
         if a[i] == "e":
             d = a[i+2:]
             c = float(a[:i])
             return("Сила гравитации равна " + str(round(c)) + " x 10^" + str(d) + " H")
+    if not("e" in a):
+        a=round(float(a))
+        if a%10==0:
+            while a%10==0:
+                a/=10
+                v+=1
+            return("Сила гравитации равна " + str(round(a)) + " x 10^" + str(v) + " H")
+        return("Сила гравитации равна " + str(a) + " Н")
 
 print("Введите массу небесного тела:")
 weight=str(input())

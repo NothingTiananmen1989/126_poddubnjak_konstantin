@@ -22,11 +22,9 @@ def g(weight, distance):
 
     for i in range(len((a))):                                    #приведение записи к виду x + 10^N (высчитывание степени  10-ти и округление)
         if a[i] == "e":
-            c = a.index(a[i + 3])
-    d = a[c - 1:]
-    v = round(float(a[:c - 3]))
-
-    return("Сила гравитации равна " + str(v) + " x 10^" + str(d) + " H")
+            d = a[i+2:]
+            c = float(a[:i])
+            return("Сила гравитации равна " + str(round(c)) + " x 10^" + str(d) + " H")
 
 print("Введите массу небесного тела:")
 weight=str(input())

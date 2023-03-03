@@ -1,0 +1,7 @@
+print("Введите скорость Джерри")
+x = int(input())
+print("Введите скорость Тома")
+y = int(input())
+print("Введите расстояние")
+s = int(input())
+print(s/(y-x))
